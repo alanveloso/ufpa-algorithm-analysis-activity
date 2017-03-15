@@ -3,15 +3,19 @@
 #include <locale.h>
 #include <string>
 #include <vector>
-using namespace std;
+using std::cout;
+using std::endl;
+using std::ifstream;
 
-void mostrar_vetor(int lista[],int tam){
+void printList(int lista[],int tam)
+{
 	for(int i=0;i<tam;i++){
-		cout << lista[i]<< " ";
+		cout << lista[i] << " ";
 	}
 }
 
-void bubblesort(int lista[],int tam){
+void bubbleSort(int lista[],int tam)
+{
 	bool ver = true;
 	while(ver){
 		ver = false;
@@ -26,7 +30,8 @@ void bubblesort(int lista[],int tam){
 	}
 }
 
-void selectionsort(int lista[],int tam){
+void selectionSort(int lista[],int tam)
+{
 	int x=0;
 
 	for (int i=0; i <= tam-1;i++){
@@ -43,7 +48,8 @@ void selectionsort(int lista[],int tam){
 	}
 }
 
-void insertionsort(int lista[],int tam){
+void insertionSort(int lista[],int tam)
+{
 	int aux, j;
 	for (int i =1; i<=tam;i++){
 		j = i;
@@ -58,15 +64,18 @@ void insertionsort(int lista[],int tam){
 
 
 
-int main(){
-    setlocale(LC_ALL,"portuguese");
+int main()
+{
+	setlocale(LC_ALL,"portuguese");
 
 	ifstream arq("100.txt");
 	int str[100];
 	int i=0, tam;
-	if(arq.is_open() && arq.good()){
+	if(arq.is_open() && arq.good())
+	{
 
-		while(!arq.fail()){
+		while(!arq.fail())
+		{
 			arq>>str[i];
 			//cout <<str[i] <<"\n";
 			i++;
@@ -74,15 +83,15 @@ int main(){
 	}
 	tam = sizeof(str)/4;
 
-    mostrar_vetor(str,tam);
-	cout <<"\n\n\n"<<endl;
-	bubblesort(str, tam);
+	printList(str,tam);
+	cout <<"\n\n\n"<< endl;
+	bubbleSort(str, tam);
 
 //	selectionsort(str, tam);
 //	insertionsort(str , tam);
 
 
-	mostrar_vetor(str,tam);
+	printList(str,tam);
 
-return 0;
+	return 0;
 }
