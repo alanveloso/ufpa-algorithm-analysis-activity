@@ -1,6 +1,6 @@
 # Trabalho – Algoritmos de Ordenação
 
-##Descrição
+## Descrição
 
 O estudo de algoritmos de ordenação é de grande importância para o estudo de comple-
 xidade de algoritmos pois através deles é possível verificar o desempenho de diferentes
@@ -41,11 +41,11 @@ máximo 4 páginas, enquanto os códigos desenvolvidos serão enviados para o pr
 O trabalho valerá no máximo 1 ponto na média final do aluno. Esse valor vale 10% da
 maior nota possível da média final e 20% da nota mínima para ser aprovado na disciplina.
 
-##Prazo
+## Prazo
 
 O prazo de entrega será dia 31 de março de 2017.
 
-##Avaliação
+## Avaliação
 Os códigos dos softwares serão avaliados e os estudantes poderão ser solicitados a explicar
 a implementação.
 
