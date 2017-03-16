@@ -2,7 +2,6 @@
 #include <fstream>
 #include <locale.h>
 #include <string>
-#include <vector>
 using std::cout;
 using std::endl;
 using std::ifstream;
@@ -12,7 +11,8 @@ using std::ifstream;
 
 void printList(int list[])
 {
-	for(int i; i < SIZE; ++i){
+	for(int i = 0; i < SIZE; i++)
+	{
 		cout << list[i] << " ";
 	}
 }
@@ -23,7 +23,7 @@ int main()
 
 	ifstream file(FILE);
 	int list[SIZE];
-	int i=0;
+	int i = 0;
 
 	if(file.is_open() && file.good())
 	{
@@ -33,9 +33,11 @@ int main()
 			i++;
 		}
 	}
-	
+
 	printList(list);
+	
 	cout << endl;
 
 	return 0;
 }
+
