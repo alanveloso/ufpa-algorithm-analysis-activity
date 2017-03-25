@@ -35,7 +35,6 @@ int main()
 	}
 
 	printList(list);
-	
 	cout << endl;
 
 	return 0;
