@@ -2,8 +2,8 @@
 
 int quickSort(int list[])
 {
-    int size = int(sizeof(list)/4);
-    int small[size];
+    int size = SIZE;
+    int smaller[size];
     int even[size];
     int bigger[size];
     int i,j,k,l = 0;
@@ -13,7 +13,7 @@ int quickSort(int list[])
     {
         if (list[i] < pivot)
         {
-            small[j] = list[i];
+            smaller[j] = list[i];
             j++;
         }
         else if (list[i] = pivot)
@@ -28,11 +28,11 @@ int quickSort(int list[])
         }
     }
 
-    quickSort(small);
+    quickSort(smaller);
     quickSort(bigger);
 
     for (i = 0; i < j; i++)
-        list[i] = small[i];
+        list[i] = smaller[i];
     for (i = j; i < k; i++)
         list[i] = even[i];
     for (i = k; i < size; i++)
