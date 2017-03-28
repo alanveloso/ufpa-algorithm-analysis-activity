@@ -2,40 +2,40 @@
 #include <fstream>
 #include <locale.h>
 #include <string>
+#include "Sort.h"
+
 using std::cout;
 using std::endl;
 using std::ifstream;
 
-#define FILE "100.txt"
-#define SIZE 100
-
-void printList(int list[])
+void printArray(int list[], int size)
 {
-	for(int i = 0; i < SIZE; i++)
+	for(int i = 0; i < size; i++)
 	{
 		cout << list[i] << " ";
 	}
+}
+
+void setArray(ifstream &file, int list[])
+{
+    int i = 0;
+    while(file >> list[i])
+        i++;
 }
 
 int main()
 {
 	setlocale(LC_ALL,"portuguese");
 
-	ifstream file(FILE);
-	int list[SIZE];
-	int i = 0;
+	ifstream file("100.txt");
+    int size = 100;
+	int list[size];
 
-	if(file.is_open() && file.good())
-	{
-		while(!file.fail())
-		{
-			file >> list[i];
-			i++;
-		}
-	}
-
-	printList(list);
-	cout << endl;
+    setArray(file, list);
+    cout << "----------- FILE -----------" << endl;
+    printArray(list, size);
+    cout << "\n----------- Sort -----------" << endl;
+    mergeSort(list, size);
 
 	return 0;
 }
